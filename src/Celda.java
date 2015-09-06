@@ -2,11 +2,11 @@ public class Celda {
 	private char cel;
 	private int tipo;
 
-	private int getTipo() {
+	public int getTipo() {
 		return tipo;
 	}
 
-	private void setTipo(int tipo) {
+	public void setTipo(int tipo) {
 		switch(tipo){
 		case 'D':  //Terreno duo
 			tipo = 1;
@@ -22,6 +22,21 @@ public class Celda {
 			break;
 		case ' ':  //Terreno vacio
 			tipo = 5;
+			break;
+		case 'g': //Obstaculo A: Rocas gigantes
+			tipo = 6;
+			break;
+		case 'n': //Obstaculo B:  Un barranco
+			tipo = 7;
+			break;
+		case 'p': //Paso alto(p) - Terreno Impasable
+			tipo = 8;
+			break;
+		case 'h': //Es un surco o hueco.
+			tipo = 9;
+			break;
+		case 'H': //Hueco o surco grande.(H)
+			tipo = 10;
 			break;
 		}
 	}
