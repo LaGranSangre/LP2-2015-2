@@ -21,6 +21,10 @@ public class Mapa {
 		this.numFil = numFil;
 	}
 	
+	public Celda ObtenerCelda(int x, int y){
+		return mapa[x][y];
+	}
+	
 	public Mapa(){ //Crea el mapa con todas las celdas en 0
 		numFil = 12;
 		numCol = 16;
@@ -46,9 +50,9 @@ public class Mapa {
 			String linea;
 			int fila = 0;
 			while((linea=br.readLine())!=null){
-				for(int j=0;j<numCol;j++){
-					for(int index=0;index<linea.length();index++)
-						mapa[fila][j].setTipo(linea.charAt(index));
+				for(int index=0;index<linea.length();index++){
+					mapa[fila][index].setCelda(linea.charAt(index));
+					mapa[fila][index].setTipo(linea.charAt(index));
 				}
 				fila++;
 			}
@@ -69,9 +73,21 @@ public class Mapa {
 	}
 	
 	public void MostrarMapa(Mapa m){
+		System.out.println("============================");
+		System.out.println("MATRIZ DE CARACTERES");
+		System.out.println("============================");
 		for(int i=0;i<numFil;i++){
 			for(int j=0;j<numCol;j++)
-				//System.out.print(mapa[i][j].getTipo() + " ");
+				System.out.print(mapa[i][j].getCelda() + " ");
+			System.out.println();
+		}
+		System.out.println();
+		System.out.println("============================");
+		System.out.println("MATRIZ DE TIPOS");
+		System.out.println("============================");
+		for(int i=0;i<numFil;i++){
+			for(int j=0;j<numCol;j++)
+				System.out.print(mapa[i][j].getTipo() + " ");
 			System.out.println();
 		}
 	}	

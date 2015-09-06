@@ -68,8 +68,9 @@ public class juego {
 		juego game=new juego();
 		Mapa m = new Mapa();
 		
+		//m.MostrarMapa(m);
+		m.CargarMapa("mapa.txt");
 		m.MostrarMapa(m);
-		
 		int opcion;
 		
 		if(game.PantallaInicio()==0) //Salir del juego
