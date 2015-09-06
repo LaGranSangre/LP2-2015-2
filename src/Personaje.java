@@ -3,6 +3,10 @@ public class Personaje {
 	private int posX;
 	private int posY;
 	
+	public Personaje(){
+		
+	}
+	
 	public Personaje(int posX, int posY){
 		this.setPosX(posX);
 		this.setPosY(posY);
