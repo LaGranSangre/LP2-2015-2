@@ -1,18 +1,22 @@
 
 public class Renderizador {
-	/*public void mostrarMapa(Mapa m,Personaje p){
+	
+	public void mostrarMapa(Mapa m,Personaje p){
 		this.clearConsole();
 		for(int i=0;i<m.NumFil;i++){
 			for(int j=0;j<m.NumCol;j++){
 				if(i!=p.posX && j!=p.posY)
 					System.out.print(this.impresionCelda(m[i][j]));
 				else
-					System.out.print(this.impresionCelda('P'));
+					System.out.print("P");
 			}
 		}
 	}
 
-	public charimpresionCelda
+	public char impresionCelda(Celda c){
+		return (char)(c.getTipo());
+	}
+	
 	private final static void clearConsole()
 	{
 	    try
@@ -32,5 +36,5 @@ public class Renderizador {
 	    {
 	        //  Handle any exceptions.
 	    }
-	}*/
+	}
 }
