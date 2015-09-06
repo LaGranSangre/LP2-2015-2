@@ -11,15 +11,19 @@ public class InterpreteComandos {
 		switch(key){
 		case 'w':	//Mover arriba
 			personaje.setPosY(y+1);
+			System.out.println("mover arriba\n");
 			break;
 		case 's': //Mover abajo
 			personaje.setPosY(y-1);
+			System.out.println("mover abajo\n");
 			break;
 		case 'd': //Mover derecha
 			personaje.setPosX(x+1);
+			System.out.println("mover derecha\n");
 			break;
 		case 'a'://Mover izquierda
 			personaje.setPosX(x-1);
+			System.out.println("mover izquierda\n");
 			break;		
 		}
 	}
