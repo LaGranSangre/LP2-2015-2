@@ -4,19 +4,26 @@ public class InterpreteComandos {
 	}
 	
 	public void InterpretarAccion(char key, Personaje personaje, Mapa mapa){
-		java.lang.Character.toLowerCase(key);
+		int x, y;
+		java.lang.Character.toLowerCase(key);  //cambio el caracter a minusculas
+		x = personaje.getPosX();
+		y = personaje.getPosY();
 		switch(key){
-		case 'W':	//Mover arriba
-			//personaje.MoverArriba();
+		case 'w':	//Mover arriba
+			personaje.setPosY(y+1);
+			System.out.println("mover arriba\n");
 			break;
-		case 'S': //Mover abajo
-			//personaje.MoverAbajo()
+		case 's': //Mover abajo
+			personaje.setPosY(y-1);
+			System.out.println("mover abajo\n");
 			break;
-		case 'D': //Mover derecha
-			//personaje.MoverDerecha()
+		case 'd': //Mover derecha
+			personaje.setPosX(x+1);
+			System.out.println("mover derecha\n");
 			break;
-		case 'A'://Mover izquierda
-			//personaje.MoverIzquierda()
+		case 'a'://Mover izquierda
+			personaje.setPosX(x-1);
+			System.out.println("mover izquierda\n");
 			break;		
 		}
 	}
