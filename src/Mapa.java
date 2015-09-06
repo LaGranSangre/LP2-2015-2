@@ -2,10 +2,9 @@
 
 public class Mapa {
 
-}
-=======
-
-public class Mapa {
+	public class Mapa {
+	
+	}
 
 }
 //efsssafadsfalalalala
