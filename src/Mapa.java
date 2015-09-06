@@ -4,6 +4,7 @@ public class Mapa {
 	private int numFil;
 	private int numCol;
 	private Celda[][] mapa;
+	private int nivel;
 	
 	public int getNumCol() {
 		return numCol;
@@ -20,6 +21,14 @@ public class Mapa {
 	public void setNumFil(int numFil) {
 		this.numFil = numFil;
 	}
+	
+	private int getNivel() {
+		return nivel;
+	}
+
+	private void setNivel(int nivel) {
+		this.nivel = nivel;
+	}	
 	
 	public Celda ObtenerCelda(int x, int y){
 		return mapa[x][y];
@@ -90,5 +99,5 @@ public class Mapa {
 				System.out.print(mapa[i][j].getTipo() + " ");
 			System.out.println();
 		}
-	}	
+	}
 }
