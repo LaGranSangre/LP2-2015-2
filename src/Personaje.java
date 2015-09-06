@@ -1,5 +1,6 @@
 
 public class Personaje {
+	private String nombre;
 	private int posX;
 	private int posY;
 	
@@ -28,6 +29,19 @@ public class Personaje {
 		this.posY = posY;
 	}
 	
+	private String getNombre() {
+		return nombre;
+	}
+
+	private void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
+	public void Imprimir(){
+		System.out.println("Nombre: " + getNombre() + " PosX: " + getPosX() + " PosY: " + getPosY());
+	}
+
+	
 }
 
 class PersonajePrincipal extends Personaje{
@@ -45,9 +59,20 @@ class PersonajePrincipal extends Personaje{
 		PersonajePrincipal.vida = vida;
 	}
 	
+	public void Imprimir(){
+		System.out.println(vida);
+		super.Imprimir();
+	}
+	
 }
 
 class Enemigo extends Personaje{
-	
+	public Enemigo(){
+		
+	}
+
+	public void Imprimir(){
+		super.Imprimir();
+	}
 }
 
