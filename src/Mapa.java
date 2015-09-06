@@ -71,7 +71,7 @@ public class Mapa {
 	public void MostrarMapa(Mapa m){
 		for(int i=0;i<numFil;i++){
 			for(int j=0;j<numCol;j++)
-				System.out.println(mapa[i][j].getTipo());
+				//System.out.print(mapa[i][j].getTipo() + " ");
 			System.out.println();
 		}
 	}	

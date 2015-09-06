@@ -63,9 +63,13 @@ public class juego {
 	public void enviar_comando(char comando){
 		Interprete.InterpretarAccion(comando, cristobal, mapa_actual);
 	}
-	
+
 	public static void main(String args[]) {
 		juego game=new juego();
+		Mapa m = new Mapa();
+		
+		m.MostrarMapa(m);
+		
 		int opcion;
 		
 		if(game.PantallaInicio()==0) //Salir del juego
