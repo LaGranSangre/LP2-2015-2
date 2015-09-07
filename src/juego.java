@@ -10,8 +10,9 @@ public class juego {
 	public juego(){
 		cristobal=new Personaje();
 		hermana=new Personaje();
-		mapa_actual=new Mapa();
 		gestor=new GestorMapas();
+		mapa_actual=new Mapa();
+		gestor.CargarMapa(mapa_actual, cristobal,hermana);//carga el mapa inicial
 		Interprete=new InterpreteComandos();
 		//aqui se añade el metodo de gestor que llena el mapa con informacion del archivo
 		//de texto		
@@ -24,6 +25,7 @@ public class juego {
 		System.out.println("*********El Valioso Cristobal*********");
 		System.out.println("\n\nPulse cualquier tecla para continuar....");
 		//Se lee cualquier entrada para continuar
+		//AQUI HAY QUE CORREGIR TMB PARA QUE SE APRETE SIN ENTER.
 		Scanner s = new Scanner(System.in);
 		String str = s.nextLine();
 		while(true){
@@ -72,27 +74,14 @@ public class juego {
 		//Holaaa ptmr ya carga mapas!!!!!
 		//Holaaa ptmr ya carga mapas!!!!!
 		juego game=new juego();
-		Mapa m = new Mapa();		
+		/*Mapa m = new Mapa();		
 		GestorMapas gm = new GestorMapas();
 		
 		m.MostrarMapa();
 		m.setNivel(2);
 		gm.CargarMapa(m, cristobal);
-		m.MostrarMapa();
-		//Mapa m = new Mapa();
-		//m.MostrarMapa();
-		
-		
-		//m.CargarMapa("mapa.txt");
-		//m.MostrarMapa(m);
-		/*GestorMapas gm = new GestorMapas();
-		m.setNivel(2);
-		gm.CargarMapa(m);
 		m.MostrarMapa();*/
 		
-		//m.MostrarMapa(m);
-		//m.CargarMapa("mapa.txt");
-		//m.MostrarMapa(m);
 		int opcion;
 		if(game.PantallaInicio()==0) //Salir del juego
 			return;
@@ -101,9 +90,8 @@ public class juego {
 		Scanner s = new Scanner(System.in);		
 		while(true){
 			String str = s.nextLine();
-			if(str.length()==1 ){
-				//System.out.println("Si imprime");
-				
+			if(str.length()==1 ){		
+				game.mapa_actual.MostrarMapa();
 				game.enviar_comando(str.charAt(0));				
 			}
 		}

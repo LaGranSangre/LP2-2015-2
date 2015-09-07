@@ -18,14 +18,14 @@ public class GestorMapas {
 		}
 	}
 	
-	public void CargarMapa(Mapa mapa, Personaje cristobal){ //Constructor de mapa
+	public void CargarMapa(Mapa mapa, Personaje cristobal, Personaje hermana){ //Constructor de mapa
 		char celda;
 		File archivo = null;
 	    FileReader fr = null;
 	    BufferedReader br = null;
 	    int nivel = mapa.getNivel();
 		try{
-			archivo =  new File(nombresMapas.get(nivel-1));
+			archivo =  new File(nombresMapas.get(nivel));
 			fr = new FileReader(archivo);
 			br = new BufferedReader(fr);
 			//Lectura del archivo de texto
@@ -36,10 +36,14 @@ public class GestorMapas {
 					mapa.getMapa()[fila][index].setCelda(linea.charAt(index));
 					mapa.getMapa()[fila][index].setTipo(linea.charAt(index));
 					celda = mapa.getMapa()[fila][index].getCelda();
-					if(celda=='A'){
+					if(celda=='A'){						
 						cristobal.setPosX(index);
 						cristobal.setPosY(fila);
-						}						
+						}
+					if(celda=='B'){//le hermana						
+						hermana.setPosX(index);
+						hermana.setPosY(fila);
+						}
 				}
 				fila++;
 			}
