@@ -4,9 +4,9 @@ public class Renderizador {
 	
 	public void mostrarMapa(Mapa m,Personaje p){
 		this.clearConsole();
-		for(int i=0;i<m.NumFil;i++){
-			for(int j=0;j<m.NumCol;j++){
-				if(i!=p.posX && j!=p.posY)
+		for(int i=0;i<m.getNumFil();i++){
+			for(int j=0;j<m.getNumCol();j++){
+				if(i!=p.getPosX()&& j!=p.getPosY())
 					System.out.print(this.impresionCelda(m[i][j]));
 				else
 					System.out.print("P");
