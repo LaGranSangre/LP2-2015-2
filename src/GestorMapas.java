@@ -39,10 +39,14 @@ public class GestorMapas {
 					if(celda=='A'){						
 						cristobal.setPosX(index);
 						cristobal.setPosY(fila);
+						cristobal.getPos_anterior().setCelda(linea.charAt(index));
+						cristobal.getPos_anterior().setTipo(linea.charAt(index));
 						}
 					if(celda=='B'){//le hermana						
 						hermana.setPosX(index);
 						hermana.setPosY(fila);
+						hermana.getPos_anterior().setCelda(linea.charAt(index));
+						hermana.getPos_anterior().setTipo(linea.charAt(index));
 						}
 				}
 				fila++;

@@ -56,7 +56,21 @@ public class Mapa {
 		nivel = 0;
 	}
 	
+	public void MoverCristobal(int viejo_x,int viejo_y,Personaje Cristobal){
+		//Asumiendo que solo puede moverse de espacios tipo tipoCelda>=1 && tipoCelda<=4 no se sabe de donde viene el cuy
+		//otro atributo del personaje!
+		Celda[][] temp=this.getMapa();
+				
+		//temp[viejo_x][viejo_y].setCelda(Cristobal.getPos_anterior().getCelda());
+		temp[viejo_x][viejo_y].setCelda(' ');
+		temp[Cristobal.getPosY()][Cristobal.getPosX()].setCelda('A');
+	}
+	
+	
+	
 	public void MostrarMapa(){
+		
+		
 		System.out.println("============================");
 		System.out.println("MATRIZ DE CARACTERES");
 		System.out.println("============================");
@@ -65,7 +79,7 @@ public class Mapa {
 				System.out.print(mapa[i][j].getCelda() + " ");
 			System.out.println();
 		}
-		System.out.println();
+		/*System.out.println();
 		System.out.println("============================");
 		System.out.println("MATRIZ DE TIPOS");
 		System.out.println("============================");
@@ -73,7 +87,7 @@ public class Mapa {
 			for(int j=0;j<numCol;j++)
 				System.out.print(mapa[i][j].getTipo() + " ");
 			System.out.println();
-		}
+		}*/
 	}
 
 }

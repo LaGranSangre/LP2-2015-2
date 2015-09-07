@@ -3,20 +3,23 @@ public class InterpreteComandos {
 	public InterpreteComandos(){	
 	}
 	
-	public void InterpretarAccion(char key, Personaje personaje, Personaje hermana, Mapa mapa){
+	public void InterpretarAccion(char key, Personaje cristobal, Personaje hermana, Mapa mapa){
 		int x, y, tipoCelda, numFil, numCol;
 		java.lang.Character.toLowerCase(key);  //cambio el caracter a minusculas
-		x = personaje.getPosX();
-		y = personaje.getPosY();
-		numFil = mapa.getNumFil();
+		x = cristobal.getPosX();//posicion de cristobal
+		y = cristobal.getPosY();
+		numFil = mapa.getNumFil();//limites del mapa
 		numCol = mapa.getNumCol();
 		switch(key){
 		case 'w':	//Mover arriba
-			y--;
-			if (y>=0 && y<numFil){
-				tipoCelda = mapa.getMapa()[x][y].getTipo();
-				if (tipoCelda>=1 && tipoCelda<=4)			
-					personaje.setPosY(y);
+			//y--;
+			if (y>=1 && y<numFil){
+				tipoCelda = mapa.getMapa()[y-1][x].getTipo();
+				if (tipoCelda>=1 && tipoCelda<=4){	
+					--y;
+					cristobal.setPosY(y);
+					mapa.MoverCristobal(y+1,x , cristobal);
+				}
 			}
 			System.out.print("X: ");
 			System.out.print(x);
@@ -26,11 +29,14 @@ public class InterpreteComandos {
 			System.out.println("mover arriba");
 			break;
 		case 's': //Mover abajo
-			y++;
-			if (y>=0 && y<numFil){
-				tipoCelda = mapa.getMapa()[x][y].getTipo();
-				if (tipoCelda>=1 && tipoCelda<=4)				
-					personaje.setPosY(y);
+			//y++;
+			if (y>=0 && y<numFil-1){
+				tipoCelda = mapa.getMapa()[y+1][x].getTipo();
+				if (tipoCelda>=1 && tipoCelda<=4){
+					y++;
+					cristobal.setPosY(y);
+					mapa.MoverCristobal(y-1,x, cristobal);
+				}
 			}
 			System.out.print("X: ");
 			System.out.print(x);
@@ -40,12 +46,15 @@ public class InterpreteComandos {
 			System.out.println("mover abajo");
 			break;
 		case 'd': //Mover derecha
-			x++;
-			if (x>=0 && x<numCol){
-				tipoCelda = mapa.getMapa()[x][y].getTipo();
-				if (tipoCelda>=1 && tipoCelda<=4)
-					personaje.setPosX(x);
-				}
+			//x++;
+			if (x>=0 && x<numCol-1){
+				tipoCelda = mapa.getMapa()[y][x+1].getTipo();
+				if (tipoCelda>=1 && tipoCelda<=4){
+					x++;
+					cristobal.setPosX(x);
+					mapa.MoverCristobal(y,x-1, cristobal);
+				}					
+			}
 			System.out.print("X: ");
 			System.out.print(x);
 			System.out.print("Y: ");
@@ -54,12 +63,15 @@ public class InterpreteComandos {
 			System.out.println("mover derecha");
 			break;
 		case 'a'://Mover izquierda			
-			x--;
-			if (x>=0 && x<numCol){
-				tipoCelda = mapa.getMapa()[x][y].getTipo();
-				if (tipoCelda>=1 && tipoCelda<=4)
-					personaje.setPosX(x);
+			//x--;
+			if (x>=1 && x<numCol){
+				tipoCelda = mapa.getMapa()[y][x-1].getTipo();
+				if (tipoCelda>=1 && tipoCelda<=4){
+					x--;
+					cristobal.setPosX(x);
+					mapa.MoverCristobal(y,x+1,  cristobal);
 				}
+			}
 			System.out.print("X: ");
 			System.out.print(x);
 			System.out.print("Y: ");

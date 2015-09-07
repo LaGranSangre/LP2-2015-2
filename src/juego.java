@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class juego {
 	private static Personaje cristobal;
-	private Personaje hermana;
+	private static Personaje hermana;
 	private GestorMapas gestor;
 	private Mapa mapa_actual;
 	private InterpreteComandos Interprete;
@@ -89,9 +89,9 @@ public class juego {
 		
 		Scanner s = new Scanner(System.in);		
 		while(true){
+			game.mapa_actual.MostrarMapa();//se muestra el mapa luego de cada cambio
 			String str = s.nextLine();
-			if(str.length()==1 ){		
-				game.mapa_actual.MostrarMapa();
+			if(str.length()==1 ){						
 				game.enviar_comando(str.charAt(0));				
 			}
 		}

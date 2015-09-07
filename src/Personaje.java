@@ -3,9 +3,19 @@ public class Personaje {
 	private String nombre;
 	private int posX;
 	private int posY;
+	private Celda pos_anterior;
 	
+	
+	public Celda getPos_anterior() {
+		return pos_anterior;
+	}
+
+	public void setPos_anterior(Celda pos_anterior) {
+		this.pos_anterior = pos_anterior;
+	}
+
 	public Personaje(){
-		
+		this.pos_anterior=new Celda();
 	}
 	
 	public Personaje(int posX, int posY){
