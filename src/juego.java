@@ -68,12 +68,29 @@ public class juego {
 
 	public static void main(String args[]) {
 		juego game=new juego();
+<<<<<<< HEAD
 		Mapa m = new Mapa();
 		m.MostrarMapa();
 		GestorMapas gm = new GestorMapas();
 		m.setNivel(2);
 		gm.CargarMapa(m);
 		m.MostrarMapa();
+=======
+		//Mapa m = new Mapa();
+		//m.MostrarMapa();
+		
+		
+		//m.CargarMapa("mapa.txt");
+		//m.MostrarMapa(m);
+		/*GestorMapas gm = new GestorMapas();
+		m.setNivel(2);
+		gm.CargarMapa(m);
+		m.MostrarMapa();*/
+		
+		//m.MostrarMapa(m);
+		//m.CargarMapa("mapa.txt");
+		//m.MostrarMapa(m);
+>>>>>>> origin/master
 		int opcion;
 		//Holaaa
 		if(game.PantallaInicio()==0) //Salir del juego

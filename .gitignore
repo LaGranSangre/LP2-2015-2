@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 /bin/
 
 *.class
+=======
+/bin/
+
+*.class
+>>>>>>> origin/master
 *.class
