@@ -2,11 +2,13 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.List;
+import java.util.ArrayList;
 
 public class GestorMapas {
 	private List<String>nombresMapas;
 	
 	public GestorMapas(){
+		nombresMapas = new ArrayList<String>();
 		for(int i=1;i<=3;i++){
 			String nombre = "mapa";
 			nombre = nombre + i;
@@ -20,8 +22,9 @@ public class GestorMapas {
 		File archivo = null;
 	    FileReader fr = null;
 	    BufferedReader br = null;
+	    int nivel = mapa.getNivel();
 		try{
-			archivo =  new File(nombreMapa);
+			archivo =  new File(nombresMapas.get(nivel-1));
 			fr = new FileReader(archivo);
 			br = new BufferedReader(fr);
 			//Lectura del archivo de texto
@@ -29,8 +32,8 @@ public class GestorMapas {
 			int fila = 0;
 			while((linea=br.readLine())!=null){
 				for(int index=0;index<linea.length();index++){
-					mapa[fila][index].setCelda(linea.charAt(index));
-					mapa[fila][index].setTipo(linea.charAt(index));
+					mapa.getMapa()[fila][index].setCelda(linea.charAt(index));
+					mapa.getMapa()[fila][index].setTipo(linea.charAt(index));
 				}
 				fila++;
 			}
