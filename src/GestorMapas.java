@@ -18,7 +18,8 @@ public class GestorMapas {
 		}
 	}
 	
-	public void CargarMapa(Mapa mapa){ //Constructor de mapa
+	public void CargarMapa(Mapa mapa, Personaje cristobal){ //Constructor de mapa
+		char celda;
 		File archivo = null;
 	    FileReader fr = null;
 	    BufferedReader br = null;
@@ -34,6 +35,11 @@ public class GestorMapas {
 				for(int index=0;index<linea.length();index++){
 					mapa.getMapa()[fila][index].setCelda(linea.charAt(index));
 					mapa.getMapa()[fila][index].setTipo(linea.charAt(index));
+					celda = mapa.getMapa()[fila][index].getCelda();
+					if(celda=='A'){
+						cristobal.setPosX(index);
+						cristobal.setPosY(fila);
+						}						
 				}
 				fila++;
 			}

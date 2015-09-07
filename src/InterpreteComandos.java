@@ -4,25 +4,67 @@ public class InterpreteComandos {
 	}
 	
 	public void InterpretarAccion(char key, Personaje personaje, Personaje hermana, Mapa mapa){
-		int x, y;
+		int x, y, tipoCelda, numFil, numCol;
 		java.lang.Character.toLowerCase(key);  //cambio el caracter a minusculas
 		x = personaje.getPosX();
 		y = personaje.getPosY();
+		numFil = mapa.getNumFil();
+		numCol = mapa.getNumCol();
 		switch(key){
 		case 'w':	//Mover arriba
-			personaje.setPosY(y+1);
+			y--;
+			if (y>=0 && y<numFil){
+				tipoCelda = mapa.getMapa()[x][y].getTipo();
+				if (tipoCelda>=1 && tipoCelda<=4)			
+					personaje.setPosY(y);
+			}
+			System.out.print("X: ");
+			System.out.print(x);
+			System.out.print("Y: ");
+			System.out.print(y);
+			System.out.print("\n");
 			System.out.println("mover arriba");
 			break;
 		case 's': //Mover abajo
-			personaje.setPosY(y-1);
+			y++;
+			if (y>=0 && y<numFil){
+				tipoCelda = mapa.getMapa()[x][y].getTipo();
+				if (tipoCelda>=1 && tipoCelda<=4)				
+					personaje.setPosY(y);
+			}
+			System.out.print("X: ");
+			System.out.print(x);
+			System.out.print("Y: ");
+			System.out.print(y);
+			System.out.print("\n");
 			System.out.println("mover abajo");
 			break;
 		case 'd': //Mover derecha
-			personaje.setPosX(x+1);
+			x++;
+			if (x>=0 && x<numCol){
+				tipoCelda = mapa.getMapa()[x][y].getTipo();
+				if (tipoCelda>=1 && tipoCelda<=4)
+					personaje.setPosX(x);
+				}
+			System.out.print("X: ");
+			System.out.print(x);
+			System.out.print("Y: ");
+			System.out.print(y);
+			System.out.print("\n");
 			System.out.println("mover derecha");
 			break;
-		case 'a'://Mover izquierda
-			personaje.setPosX(x-1);
+		case 'a'://Mover izquierda			
+			x--;
+			if (x>=0 && x<numCol){
+				tipoCelda = mapa.getMapa()[x][y].getTipo();
+				if (tipoCelda>=1 && tipoCelda<=4)
+					personaje.setPosX(x);
+				}
+			System.out.print("X: ");
+			System.out.print(x);
+			System.out.print("Y: ");
+			System.out.print(y);
+			System.out.print("\n");
 			System.out.println("mover izquierda\n");
 			break;
 		case 'i':	//Mover arriba
