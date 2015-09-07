@@ -4,10 +4,15 @@ public class InterpreteComandos {
 	}
 	
 	public void InterpretarAccion(char key, Personaje cristobal, Personaje hermana, Mapa mapa){
-		int x, y, tipoCelda, numFil, numCol;
+		int x, y, xH, yH, tipoCelda, numFil, numCol;
 		java.lang.Character.toLowerCase(key);  //cambio el caracter a minusculas
+		//POSICION DE CRISTOBAL
 		x = cristobal.getPosX();//posicion de cristobal
 		y = cristobal.getPosY();
+		//POSICION DE HERMANA
+		xH = hermana.getPosX();
+		yH = hermana.getPosY();
+		
 		numFil = mapa.getNumFil();//limites del mapa
 		numCol = mapa.getNumCol();
 		switch(key){
@@ -18,7 +23,7 @@ public class InterpreteComandos {
 				if (tipoCelda>=1 && tipoCelda<=4){	
 					--y;
 					cristobal.setPosY(y);
-					mapa.MoverCristobal(y+1,x , cristobal);
+					//mapa.MoverCristobal(y+1,x , cristobal);
 				}
 			}
 			System.out.print("X: ");
@@ -35,7 +40,7 @@ public class InterpreteComandos {
 				if (tipoCelda>=1 && tipoCelda<=4){
 					y++;
 					cristobal.setPosY(y);
-					mapa.MoverCristobal(y-1,x, cristobal);
+					//mapa.MoverCristobal(y-1,x, cristobal);
 				}
 			}
 			System.out.print("X: ");
@@ -52,7 +57,7 @@ public class InterpreteComandos {
 				if (tipoCelda>=1 && tipoCelda<=4){
 					x++;
 					cristobal.setPosX(x);
-					mapa.MoverCristobal(y,x-1, cristobal);
+					//mapa.MoverCristobal(y,x-1, cristobal);
 				}					
 			}
 			System.out.print("X: ");
@@ -69,7 +74,7 @@ public class InterpreteComandos {
 				if (tipoCelda>=1 && tipoCelda<=4){
 					x--;
 					cristobal.setPosX(x);
-					mapa.MoverCristobal(y,x+1,  cristobal);
+					//mapa.MoverCristobal(y,x+1,  cristobal);
 				}
 			}
 			System.out.print("X: ");
@@ -79,22 +84,76 @@ public class InterpreteComandos {
 			System.out.print("\n");
 			System.out.println("mover izquierda\n");
 			break;
-		case 'i':	//Mover arriba
-			hermana.setPosY(y+1);
-			System.out.println("mover arriba\n");
-			break;
-		case 'k': //Mover abajo
-			hermana.setPosY(y-1);
-			System.out.println("mover abajo\n");
-			break;
-		case 'l': //Mover derecha
-			hermana.setPosX(x+1);
-			System.out.println("mover derecha\n");
-			break;
-		case 'j'://Mover izquierda
-			hermana.setPosX(x-1);
-			System.out.println("mover izquierda\n");
-			break;
+		
+			//MOVER HERMANA
+					case 'i':	//Mover arriba
+						//y--;
+						if (yH>=1 && yH<numFil){
+							tipoCelda = mapa.getMapa()[yH-1][xH].getTipo();
+							if (tipoCelda>=1 && tipoCelda<=4){	
+								--yH;
+								hermana.setPosY(yH);
+								//mapa.MoverHermana(yH+1,xH , hermana);
+							}
+						}
+						System.out.print("X: ");
+						System.out.print(xH);
+						System.out.print("Y: ");
+						System.out.print(yH);
+						System.out.print("\n");
+						System.out.println("mover arriba");
+						break;
+					case 'k': //Mover abajo
+						//y++;
+						if (yH>=0 && yH<numFil-1){
+							tipoCelda = mapa.getMapa()[yH+1][xH].getTipo();
+							if (tipoCelda>=1 && tipoCelda<=4){
+								yH++;
+								hermana.setPosY(yH);
+								//mapa.MoverHermana(yH-1,xH, hermana);
+							}
+						}
+						System.out.print("X: ");
+						System.out.print(xH);
+						System.out.print("Y: ");
+						System.out.print(yH);
+						System.out.print("\n");
+						System.out.println("mover abajo");
+						break;
+					case 'l': //Mover derecha
+						//x++;
+						if (xH>=0 && xH<numCol-1){
+							tipoCelda = mapa.getMapa()[yH][xH+1].getTipo();
+							if (tipoCelda>=1 && tipoCelda<=4){
+								xH++;
+								hermana.setPosX(xH);
+								//mapa.MoverHermana(yH,xH-1, hermana);
+							}					
+						}
+						System.out.print("X: ");
+						System.out.print(xH);
+						System.out.print("Y: ");
+						System.out.print(yH);
+						System.out.print("\n");
+						System.out.println("mover derecha");
+						break;
+					case 'j'://Mover izquierda			
+						//x--;
+						if (xH>=1 && xH<numCol){
+							tipoCelda = mapa.getMapa()[yH][xH-1].getTipo();
+							if (tipoCelda>=1 && tipoCelda<=4){
+								xH--;
+								hermana.setPosX(xH);
+								//mapa.MoverHermana(yH, xH+1, hermana);
+							}
+						}
+						System.out.print("X: ");
+						System.out.print(xH);
+						System.out.print("Y: ");
+						System.out.print(yH);
+						System.out.print("\n");
+						System.out.println("mover izquierda\n");
+						break;
 		}
 	}
 	public void InterpretarComandoEspecial(String key, String comando, Personaje personaje, Mapa mapa){

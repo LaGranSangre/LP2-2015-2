@@ -36,17 +36,21 @@ public class GestorMapas {
 					mapa.getMapa()[fila][index].setCelda(linea.charAt(index));
 					mapa.getMapa()[fila][index].setTipo(linea.charAt(index));
 					celda = mapa.getMapa()[fila][index].getCelda();
-					if(celda=='A'){						
-						cristobal.setPosX(index);
-						cristobal.setPosY(fila);
-						cristobal.getPos_anterior().setCelda(linea.charAt(index));
-						cristobal.getPos_anterior().setTipo(linea.charAt(index));
+					if(celda=='A'){						//Posicion inicial de cristobal
+						cristobal.setPosX(index);		//guardo en cristobal sus coordenadas iniciales
+						cristobal.setPosY(fila);	
+						mapa.getMapa()[fila][index].setCelda('S');
+						mapa.getMapa()[fila][index].setTipo('S');
+						//cristobal.getPos_anterior().setCelda(linea.charAt(index));
+						//cristobal.getPos_anterior().setTipo(linea.charAt(index));
 						}
 					if(celda=='B'){//le hermana						
 						hermana.setPosX(index);
 						hermana.setPosY(fila);
-						hermana.getPos_anterior().setCelda(linea.charAt(index));
-						hermana.getPos_anterior().setTipo(linea.charAt(index));
+						mapa.getMapa()[fila][index].setCelda('N');
+						mapa.getMapa()[fila][index].setTipo('N');
+						//hermana.getPos_anterior().setCelda(linea.charAt(index));
+						//hermana.getPos_anterior().setTipo(linea.charAt(index));
 						}
 				}
 				fila++;

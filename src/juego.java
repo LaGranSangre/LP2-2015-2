@@ -89,7 +89,7 @@ public class juego {
 		
 		Scanner s = new Scanner(System.in);		
 		while(true){
-			game.mapa_actual.MostrarMapa();//se muestra el mapa luego de cada cambio
+			game.mapa_actual.MostrarMapa(cristobal.getPosX(), cristobal.getPosY(), hermana.getPosX(), hermana.getPosY());//se muestra el mapa luego de cada cambio
 			String str = s.nextLine();
 			if(str.length()==1 ){						
 				game.enviar_comando(str.charAt(0));				

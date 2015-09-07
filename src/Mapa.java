@@ -56,27 +56,46 @@ public class Mapa {
 		nivel = 0;
 	}
 	
-	public void MoverCristobal(int viejo_x,int viejo_y,Personaje Cristobal){
+	/*public void MoverCristobal(int viejo_x,int viejo_y,Personaje Cristobal){
 		//Asumiendo que solo puede moverse de espacios tipo tipoCelda>=1 && tipoCelda<=4 no se sabe de donde viene el cuy
 		//otro atributo del personaje!
 		Celda[][] temp=this.getMapa();
 				
 		//temp[viejo_x][viejo_y].setCelda(Cristobal.getPos_anterior().getCelda());
-		temp[viejo_x][viejo_y].setCelda(' ');
+		temp[viejo_x][viejo_y].setCelda('a');
 		temp[Cristobal.getPosY()][Cristobal.getPosX()].setCelda('A');
 	}
 	
+	public void MoverHermana(int viejo_x,int viejo_y,Personaje Hermana){
+		//Asumiendo que solo puede moverse de espacios tipo tipoCelda>=1 && tipoCelda<=4 no se sabe de donde viene el cuy
+		//otro atributo del personaje!
+		Celda[][] temp=this.getMapa();
+				
+		//temp[viejo_x][viejo_y].setCelda(Cristobal.getPos_anterior().getCelda());
+		temp[viejo_x][viejo_y].setCelda('b');
+		temp[Hermana.getPosY()][Hermana.getPosX()].setCelda('B');
+	}
+	*/
 	
 	
-	public void MostrarMapa(){
+	
+	
+	
+	public void MostrarMapa(int xC, int yC, int xH, int yH){
 		
 		
 		System.out.println("============================");
 		System.out.println("MATRIZ DE CARACTERES");
 		System.out.println("============================");
 		for(int i=0;i<numFil;i++){
-			for(int j=0;j<numCol;j++)
-				System.out.print(mapa[i][j].getCelda() + " ");
+			for(int j=0;j<numCol;j++){
+				if (j==xC && i==yC)
+					System.out.print("A ");
+				else if((j==xH && i==yH))
+					System.out.print("B ");
+				else
+					System.out.print(mapa[i][j].getCelda() + " ");
+				}
 			System.out.println();
 		}
 		/*System.out.println();
