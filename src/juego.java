@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class juego {
-	private Personaje cristobal;
+	private static Personaje cristobal;
 	private Personaje hermana;
 	private GestorMapas gestor;
 	private Mapa mapa_actual;
@@ -66,16 +66,18 @@ public class juego {
 		Interprete.InterpretarAccion(comando, cristobal,hermana, mapa_actual);
 	}
 
+
 	public static void main(String args[]) {
 		//Holaaa ptmr ya carga mapas!!!!!
 		//Holaaa ptmr ya carga mapas!!!!!
 		//Holaaa ptmr ya carga mapas!!!!!
 		juego game=new juego();
-		Mapa m = new Mapa();
-		m.MostrarMapa();
+		Mapa m = new Mapa();		
 		GestorMapas gm = new GestorMapas();
+		
+		m.MostrarMapa();
 		m.setNivel(2);
-		gm.CargarMapa(m);
+		gm.CargarMapa(m, cristobal);
 		m.MostrarMapa();
 		//Mapa m = new Mapa();
 		//m.MostrarMapa();
