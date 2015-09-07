@@ -1,12 +1,10 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Iterator;
+import java.io.*;
 
 public class Mapa {
 	private int numFil;
 	private int numCol;
-	//private List<List<Celda>> mapa;
-	private List<List<String>> lista;
+	private Celda[][] mapa;
+	private int nivel;
 	
 	public int getNumCol() {
 		return numCol;
@@ -24,15 +22,58 @@ public class Mapa {
 		this.numFil = numFil;
 	}
 	
-	public Mapa(){ //Constructor de mapa
-		//Las dimensiones del mapa son 12*16(12 filas y 16 columnas)
-		numFil = 12; 
-		numCol = 16;
-		
-		/*for (List<Celda> list : mapa) {
-			for (Celda celda : list) {
-				celda.
-			}
-		}*/
+	public int getNivel() {
+		return nivel;
 	}
+
+	public void setNivel(int nivel) {
+		this.nivel = nivel;
+	}	
+	
+	public Celda[][] getMapa() {
+		return mapa;
+	}
+
+	public void setMapa(Celda[][] mapa) {
+		this.mapa = mapa;
+	}
+	
+	public Celda ObtenerCelda(int x, int y){
+		return getMapa()[x][y];
+	}
+	
+	public Mapa(){ //Crea el mapa con todas las celdas en 0
+		numFil = 12;
+		numCol = 16;
+		setMapa(new Celda[numFil][numCol]);
+		for(int i=0;i<numFil;i++){
+			//mapa[i] = new Celda[numCol];
+			for(int j=0;j<numCol;j++){
+				getMapa()[i][j] = new Celda();
+				getMapa()[i][j].setCelda('0');
+			}
+		}
+		nivel = 0;
+	}
+	
+	public void MostrarMapa(){
+		System.out.println("============================");
+		System.out.println("MATRIZ DE CARACTERES");
+		System.out.println("============================");
+		for(int i=0;i<numFil;i++){
+			for(int j=0;j<numCol;j++)
+				System.out.print(mapa[i][j].getCelda() + " ");
+			System.out.println();
+		}
+		System.out.println();
+		System.out.println("============================");
+		System.out.println("MATRIZ DE TIPOS");
+		System.out.println("============================");
+		for(int i=0;i<numFil;i++){
+			for(int j=0;j<numCol;j++)
+				System.out.print(mapa[i][j].getTipo() + " ");
+			System.out.println();
+		}
+	}
+
 }

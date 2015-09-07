@@ -1,13 +1,25 @@
 public class Celda {
-	private char cel;
+	private char celda;
 	private int tipo;
+
+	public char getCelda() {
+		return celda;
+	}
+
+	public void setCelda(char celda) {
+		this.celda = celda;
+	}
 
 	public int getTipo() {
 		return tipo;
 	}
 
 	public void setTipo(int tipo) {
-		switch(tipo){
+		this.tipo = tipo;
+	}
+	
+	public void setTipo(char caracterCelda) {
+		switch(caracterCelda){
 		case 'D':  //Terreno duo
 			tipo = 1;
 			break;
@@ -40,6 +52,5 @@ public class Celda {
 			break;
 		}
 	}
-	
 	
 }
