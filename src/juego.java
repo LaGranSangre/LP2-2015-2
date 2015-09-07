@@ -67,11 +67,7 @@ public class juego {
 	public static void main(String args[]) {
 		juego game=new juego();
 		Mapa m = new Mapa();
-		
-		//m.MostrarMapa(m);
-		m.CargarMapa("mapa.txt");
-		m.MostrarMapa(m);
-		int opcion;
+	
 		
 		if(game.PantallaInicio()==0) //Salir del juego
 			return;
