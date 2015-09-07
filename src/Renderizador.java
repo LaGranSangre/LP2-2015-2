@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+/*
 
 
 public class Renderizador {
@@ -75,6 +75,6 @@ public class Renderizador {
 	    {
 	        //  Handle any exceptions.
 	    }
-	}*/
+	}
 }
->>>>>>> origin/master
+*/
