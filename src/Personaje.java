@@ -66,11 +66,11 @@ class PersonajePrincipal extends Personaje{
 		setVida(getVida()-1);
 	}
 	
-	private static int getVida() {
+	public static int getVida() {
 		return vida;
 	}
 
-	private static void setVida(int vida) {
+	public static void setVida(int vida) {
 		PersonajePrincipal.vida = vida;
 	}
 	

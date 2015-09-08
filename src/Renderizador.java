@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Renderizador {
 	private Celda[][] mapaAMostrar;
 	
-	public void mostrarMapa(Mapa m,Personaje p1,Personaje p2){
+	public void mostrarMapa(Mapa m,PersonajePrincipal p1,PersonajePrincipal  p2){
 		int xC=p1.getPosX(),yC=p1.getPosY();
 		int xH=p2.getPosX(),yH=p2.getPosY();
 		generarMapaAMostrar(m);
@@ -11,6 +11,8 @@ public class Renderizador {
 		System.out.println("============================");
 		System.out.println("MATRIZ DE CARACTERES");
 		System.out.println("============================");
+		System.out.print("Vida: ");
+		System.out.println(p1.getVida());
 		for(int i=0;i<m.getNumFil();i++){
 			for(int j=0;j<m.getNumCol();j++){
 				if (j==xC && i==yC)

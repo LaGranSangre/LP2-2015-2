@@ -220,7 +220,7 @@ public class juego {
 			Rend.mostrarMapa(mapa_actual, cristobal, hermana);//se muestra el mapa luego de cada cambio
 			str = s.nextLine();
 			
-			mapa_actual.EliminaRata(mapa_actual);
+			mapa_actual.EliminaRata();
 			
 			//cristobal.setPosX(cristobal.getPosX()+3); 
 			cristobal.setPosY(cristobal.getPosY()-1);		
@@ -241,8 +241,23 @@ public class juego {
 
 	public boolean VerificarAccionDuo(){
 		Scanner s = new Scanner(System.in);
-		String str = s.nextLine();
-		String clave="AIKWS";
+		String str = s.nextLine();		
+		String clave="";
+		int nivel = mapa_actual.getNivel();
+		switch (nivel){
+			case 0:
+				clave = "WSIKDDLL";
+				break;
+			case 1:
+				if(cristobal.getPosX()==5 && hermana.getPosX()==5)
+					clave = "IWOELD";
+				else 
+					clave = "WUOQEI";
+				break;
+			case 2:
+				clave ="LDOEQUOE";				
+				break;
+		}
 		return (str.equals(clave));
 	}
 	
