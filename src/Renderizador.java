@@ -1,7 +1,16 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.util.Scanner;
 
 public class Renderizador {
 	private Celda[][] mapaAMostrar;
+	private String[]nombresHistorias={"Historia1.txt","","Historia3.txt"};
+	private String[][]historia;
+	
+	public Renderizador(){
+		CargarHistorias();
+	}
 	
 	public void mostrarMapa(Mapa m,PersonajePrincipal p1,PersonajePrincipal  p2){
 		int xC=p1.getPosX(),yC=p1.getPosY();
@@ -41,24 +50,7 @@ public class Renderizador {
 	
 	private final static void limpiarPantalla()
 	{
-	    /*try
-	    {
-	        final String os = System.getProperty("os.name");
-
-	        if (os.contains("Windows"))
-	        {
-	            Runtime.getRuntime().exec("cls");
-	        }
-	        else
-	        {
-	            Runtime.getRuntime().exec("clear");
-	        }
-	    }
-	    catch (final Exception e)
-	    {
-	        //  Handle any exceptions.
-	    }*/
-		for(int i=0;i<25;i++)
+	    for(int i=0;i<25;i++)
 			System.out.println("");
 	}
 	
@@ -145,25 +137,55 @@ public class Renderizador {
 	
 	public void mostrarHistoria1(){
 		limpiarPantalla();
-		System.out.println("          Cristóbal y su hermana son pequeños.");
-		System.out.println("         Hermana de Cristobal: ¿Para qué servimos?");
-		System.out.println("               Cristobal: Seremos valiosos");
-		System.out.println("        Hermana de Cristobal: ¿Que te parece si...");
-		for(int j=0;j<9;j++)
-			for(int i=0;i<1000000000;i++);;
-		System.out.println("           ... preguntamos a la llama sabia");
+		mostrarHistoria(0);
 	}
 
 	public void mostrarHistoria2(){
 		limpiarPantalla();
 	}
 	
-	public void mostrarHistoria3(){
+	public void mostrarHistoria(int numNivel){
 		limpiarPantalla();
+		if(nombresHistorias[numNivel].length()!=0){
+			for(int i=0;historia[numNivel][i].length()!=0;i++){
+				System.out.println(historia[numNivel][i]);
+				for(int j=0;j<5;j++)
+					for(int k=0;k<1000000000;k++);;
+			}
+		}
 	}
 	
-	public void mostrarHistoria4(){
-		limpiarPantalla();
+	public void CargarHistorias(){ //Constructor de mapa
+		File archivo = null;
+	    FileReader fr = null;
+	    BufferedReader br = null;
+	    historia=new String[nombresHistorias.length][50];
+	    for(int i=0;i<nombresHistorias.length;i++){
+			try{
+				if(nombresHistorias[i].length()==0)continue;
+				
+				archivo =  new File(nombresHistorias[i]);
+				fr = new FileReader(archivo);
+				br = new BufferedReader(fr);
+				
+				String linea;
+				int fila = 0;
+				while((linea=br.readLine())!=null){
+					historia[i][fila]=linea;
+					fila++;
+				}
+				historia[i][fila]="";
+			}catch(Exception e){
+		         e.printStackTrace();
+			}finally{
+		        try{                    
+		           if( null != fr ){   
+		              fr.close();     
+		           }                  
+		        }catch (Exception e2){ 
+		           e2.printStackTrace();
+		        }
+		   }
+	    }
 	}
-	
 }

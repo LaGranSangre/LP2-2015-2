@@ -308,6 +308,8 @@ public class juego {
 						game.AccionDuo(game.mapa_actual);
 						break;
 					}
+					else
+						cristobal.setVida(cristobal.getVida()-2);
 				}
 			}
 
@@ -328,6 +330,7 @@ public class juego {
 			//Si llega al final del nivel
 			if((posCX==(game.mapa_actual.getNumCol()-1)) && (posHX==posCX)){							
 				game.mapa_actual.setNivel(game.mapa_actual.getNivel()+1);
+				game.Rend.mostrarHistoria(game.mapa_actual.getNivel());
 				game.gestor.CargarMapa(game.mapa_actual, cristobal,hermana);//carga el mapa siguiente
 				game.Rend.mostrarMapa(game.mapa_actual, cristobal, hermana);
 			}		
