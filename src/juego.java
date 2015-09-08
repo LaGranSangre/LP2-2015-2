@@ -167,6 +167,42 @@ public class juego {
 			}
 			break;
 			
+		case 2:
+			//cristobal.setPosX(cristobal.getPosX()-1); 
+			cristobal.setPosY(cristobal.getPosY()-1);		
+			//hermana.setPosX(hermana.getPosX()-1); 
+			hermana.setPosY(hermana.getPosY()+1);	
+			
+			Rend.mostrarMapa(mapa_actual, cristobal, hermana);//se muestra el mapa luego de cada cambio
+			str = s.nextLine();
+			
+			cristobal.setPosX(cristobal.getPosX()+1); 
+			//cristobal.setPosY(cristobal.getPosY()-1);		
+			hermana.setPosX(hermana.getPosX()+1); 
+			//hermana.setPosY(hermana.getPosY()+1);	
+			
+			Rend.mostrarMapa(mapa_actual, cristobal, hermana);//se muestra el mapa luego de cada cambio
+			str = s.nextLine();		
+			
+			cristobal.setPosX(cristobal.getPosX()+3); 
+			//cristobal.setPosY(cristobal.getPosY()-1);		
+			hermana.setPosX(hermana.getPosX()+3); 
+			//hermana.setPosY(hermana.getPosY()+1);	
+			
+			Rend.mostrarMapa(mapa_actual, cristobal, hermana);//se muestra el mapa luego de cada cambio
+			str = s.nextLine();
+			
+			mapa_actual.EliminaRata(mapa_actual);
+			
+			//cristobal.setPosX(cristobal.getPosX()+3); 
+			cristobal.setPosY(cristobal.getPosY()-1);		
+			//hermana.setPosX(hermana.getPosX()+3); 
+			hermana.setPosY(hermana.getPosY()-1);	
+			
+			Rend.mostrarMapa(mapa_actual, cristobal, hermana);//se muestra el mapa luego de cada cambio
+			str = s.nextLine();
+			
+		
 		}
 	}
 	
@@ -183,9 +219,7 @@ public class juego {
 	}
 	
 	public static void main(String args[]) {
-		//Holaaa ptmr ya carga mapas!!!!!
-		//Holaaa ptmr ya carga mapas!!!!!
-		//Holaaa ptmr ya carga mapas!!!!!
+		
 		juego game=new juego();
 		/*Mapa m = new Mapa();		
 		GestorMapas gm = new GestorMapas();
@@ -203,7 +237,6 @@ public class juego {
 		Scanner s = new Scanner(System.in);		
 		while(true){
 			int posCX = cristobal.getPosX(), posCY = cristobal.getPosY(), posHX = hermana.getPosX(), posHY = hermana.getPosY();
-			System.out.print(posCX + posCY + posHX + posHY);
 			
 			game.Rend.mostrarMapa(game.mapa_actual,cristobal,hermana);
 			
