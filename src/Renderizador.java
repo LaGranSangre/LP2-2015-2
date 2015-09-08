@@ -114,4 +114,10 @@ public class Renderizador {
 				System.out.println("La opción ingresada no es válida");
 		}
 	}
+	
+
+	public void mostrarAccionDuo(){
+		System.out.println("Persione las teclas: AIKWS");
+	}
+	
 }

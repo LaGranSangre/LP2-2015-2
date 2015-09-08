@@ -68,6 +68,7 @@ public class juego {
 			hermana.setPosX(hermana.getPosX()-1); 
 			hermana.setPosY(hermana.getPosY()-2);	
 						
+			Rend.mostrarMapa(mapa_actual, cristobal, hermana);
 		}
 	}
 	
@@ -76,6 +77,13 @@ public class juego {
 	}
 
 
+	public boolean VerificarAccionDuo(){
+		Scanner s = new Scanner(System.in);
+		String str = s.nextLine();
+		String clave="AIKWS";
+		return (str.equals(clave));
+	}
+	
 	public static void main(String args[]) {
 		//Holaaa ptmr ya carga mapas!!!!!
 		//Holaaa ptmr ya carga mapas!!!!!
@@ -104,7 +112,13 @@ public class juego {
 			int tipoCeldaH = game.mapa_actual.getMapa()[posHY][posHX].getTipo(), tipoCeldaC = game.mapa_actual.getMapa()[posCY][posCX].getTipo();  
 			
 			if(tipoCeldaC==1 && tipoCeldaH==1){ //tipo 1 : 'D'
-				game.AccionDuo(game.mapa_actual);
+				while(true){
+					game.Rend.mostrarAccionDuo();
+					if(game.VerificarAccionDuo()){
+						game.AccionDuo(game.mapa_actual);
+						break;
+					}
+				}
 			}
 			
 			
