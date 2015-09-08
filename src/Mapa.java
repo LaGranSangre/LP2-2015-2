@@ -3,9 +3,18 @@ import java.io.*;
 public class Mapa {
 	private int numFil;
 	private int numCol;
-	private Celda[][] mapa;
+	private Celda [][] mapa;
 	private int nivel;
+	private boolean enemigo;
 	
+	public boolean isEnemigo() {
+		return enemigo;
+	}
+
+	public void setEnemigo(boolean enemigo) {
+		this.enemigo = enemigo;
+	}
+
 	public int getNumCol() {
 		return numCol;
 	}
@@ -43,6 +52,7 @@ public class Mapa {
 	}
 	
 	public Mapa(){ //Crea el mapa con todas las celdas en 0
+		enemigo=false;
 		numFil = 12;
 		numCol = 16;
 		setMapa(new Celda[numFil][numCol]);

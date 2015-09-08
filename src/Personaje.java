@@ -55,10 +55,15 @@ public class Personaje {
 }
 
 class PersonajePrincipal extends Personaje{
+	
 	private static int vida = 10;
 	
 	public PersonajePrincipal(){
 		
+	}
+	
+	public void reducir_vida_movimiento(){
+		setVida(getVida()-1);
 	}
 	
 	private static int getVida() {

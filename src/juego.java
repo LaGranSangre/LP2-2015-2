@@ -1,15 +1,15 @@
 import java.util.Scanner;
 
 public class juego {
-	private static Personaje cristobal;
-	private static Personaje hermana;
+	private static PersonajePrincipal cristobal;
+	private static PersonajePrincipal hermana;
 	private GestorMapas gestor;
 	private Mapa mapa_actual;
 	private InterpreteComandos Interprete;
 	
 	public juego(){
-		cristobal=new Personaje();
-		hermana=new Personaje();
+		cristobal=new PersonajePrincipal();
+		hermana=new PersonajePrincipal();
 		gestor=new GestorMapas();
 		mapa_actual=new Mapa();
 		gestor.CargarMapa(mapa_actual, cristobal,hermana);//carga el mapa inicial

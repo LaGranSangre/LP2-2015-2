@@ -1,9 +1,19 @@
+import java.util.Scanner;
+
 public class InterpreteComandos {
 	
 	public InterpreteComandos(){	
 	}
 	
-	public void InterpretarAccion(char key, Personaje cristobal, Personaje hermana, Mapa mapa){
+	public void revisarTrigger(Mapa mapa,int x,int y){		
+		if(mapa.getMapa()[x][y].getCelda()=='T'){
+			for(int i=0;i<mapa.getNumCol();++i) if(mapa.getMapa()[x][i].getCelda()=='T')mapa.getMapa()[x][i].setCelda('N');
+			mapa.getMapa()[x+1][y].setCelda('E');		
+			mapa.setEnemigo(true);
+		}
+	}
+	
+	public void InterpretarAccion(char key, PersonajePrincipal cristobal, PersonajePrincipal hermana, Mapa mapa){
 		int x, y, xH, yH, tipoCelda, numFil, numCol;
 		java.lang.Character.toLowerCase(key);  //cambio el caracter a minusculas
 		//POSICION DE CRISTOBAL
@@ -76,7 +86,7 @@ public class InterpreteComandos {
 					cristobal.setPosX(x);
 					//mapa.MoverCristobal(y,x+1,  cristobal);
 				}
-			}
+			}			
 			System.out.print("X: ");
 			System.out.print(x);
 			System.out.print("Y: ");
@@ -88,6 +98,10 @@ public class InterpreteComandos {
 			//MOVER HERMANA
 					case 'i':	//Mover arriba
 						//y--;
+						if(mapa.isEnemigo()==true){
+							hermana.reducir_vida_movimiento();
+							break;
+						}
 						if (yH>=1 && yH<numFil){
 							tipoCelda = mapa.getMapa()[yH-1][xH].getTipo();
 							if (tipoCelda>=1 && tipoCelda<=4){	
@@ -96,6 +110,7 @@ public class InterpreteComandos {
 								//mapa.MoverHermana(yH+1,xH , hermana);
 							}
 						}
+						revisarTrigger(mapa, xH, yH);
 						System.out.print("X: ");
 						System.out.print(xH);
 						System.out.print("Y: ");
@@ -105,6 +120,10 @@ public class InterpreteComandos {
 						break;
 					case 'k': //Mover abajo
 						//y++;
+						if(mapa.isEnemigo()==true){
+							hermana.reducir_vida_movimiento();
+							break;
+						}
 						if (yH>=0 && yH<numFil-1){
 							tipoCelda = mapa.getMapa()[yH+1][xH].getTipo();
 							if (tipoCelda>=1 && tipoCelda<=4){
@@ -113,6 +132,7 @@ public class InterpreteComandos {
 								//mapa.MoverHermana(yH-1,xH, hermana);
 							}
 						}
+						revisarTrigger(mapa, xH, yH);
 						System.out.print("X: ");
 						System.out.print(xH);
 						System.out.print("Y: ");
@@ -122,6 +142,10 @@ public class InterpreteComandos {
 						break;
 					case 'l': //Mover derecha
 						//x++;
+						if(mapa.isEnemigo()==true){
+							hermana.reducir_vida_movimiento();
+							break;
+						}
 						if (xH>=0 && xH<numCol-1){
 							tipoCelda = mapa.getMapa()[yH][xH+1].getTipo();
 							if (tipoCelda>=1 && tipoCelda<=4){
@@ -130,6 +154,7 @@ public class InterpreteComandos {
 								//mapa.MoverHermana(yH,xH-1, hermana);
 							}					
 						}
+						revisarTrigger(mapa, xH, yH);
 						System.out.print("X: ");
 						System.out.print(xH);
 						System.out.print("Y: ");
@@ -139,6 +164,10 @@ public class InterpreteComandos {
 						break;
 					case 'j'://Mover izquierda			
 						//x--;
+						if(mapa.isEnemigo()==true){
+							hermana.reducir_vida_movimiento();
+							break;
+						}
 						if (xH>=1 && xH<numCol){
 							tipoCelda = mapa.getMapa()[yH][xH-1].getTipo();
 							if (tipoCelda>=1 && tipoCelda<=4){
@@ -147,6 +176,7 @@ public class InterpreteComandos {
 								//mapa.MoverHermana(yH, xH+1, hermana);
 							}
 						}
+						revisarTrigger(mapa, xH, yH);
 						System.out.print("X: ");
 						System.out.print(xH);
 						System.out.print("Y: ");
