@@ -27,7 +27,7 @@ public class juego {
 	public void AccionDuo(Mapa mapaActual){
 		int tipoMapa = mapaActual.getNivel();
 		switch (tipoMapa){
-		case 1:
+		case 0:
 			cristobal.setPosX(cristobal.getPosX()-1); 
 			cristobal.setPosY(cristobal.getPosY()-1);		
 			hermana.setPosX(hermana.getPosX()-1); 
@@ -101,7 +101,7 @@ public class juego {
 			
 			game.Rend.mostrarMapa(game.mapa_actual,cristobal,hermana);
 			
-			int tipoCeldaH = game.mapa_actual.getMapa()[posHX][posHY].getTipo(), tipoCeldaC = game.mapa_actual.getMapa()[posCX][posCY].getTipo();  
+			int tipoCeldaH = game.mapa_actual.getMapa()[posHY][posHX].getTipo(), tipoCeldaC = game.mapa_actual.getMapa()[posCY][posCX].getTipo();  
 			
 			if(tipoCeldaC==1 && tipoCeldaH==1){ //tipo 1 : 'D'
 				game.AccionDuo(game.mapa_actual);
