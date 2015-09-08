@@ -97,6 +97,7 @@ public class juego {
 		Scanner s = new Scanner(System.in);		
 		while(true){
 			int posCX = cristobal.getPosX(), posCY = cristobal.getPosY(), posHX = hermana.getPosX(), posHY = hermana.getPosY();
+			System.out.print(posCX + posCY + posHX + posHY);
 			
 			game.Rend.mostrarMapa(game.mapa_actual,cristobal,hermana);
 			
