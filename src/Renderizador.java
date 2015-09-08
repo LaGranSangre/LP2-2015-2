@@ -120,8 +120,23 @@ public class Renderizador {
 	}
 	
 
-	public void mostrarAccionDuo(){
-		System.out.println("Persione las teclas: AIKWS");
+	public void mostrarAccionDuo(int nivel, int posCX, int posHX){
+		String clave="";
+		switch (nivel){
+		case 0:
+			clave = "WSIKDDLL";
+			break;
+		case 1:
+			if(posCX==5 && posHX==5)
+				clave = "IWOELD";
+			else 
+				clave = "WUOQEI";
+			break;
+		case 2:
+			clave ="LDOEQUOE";				
+			break;
+		}
+		System.out.println("Presione las teclas: " + clave);
 	}
 	
 	public void mostrarAccionCristobal(){

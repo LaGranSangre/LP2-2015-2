@@ -254,14 +254,10 @@ public class juego {
 
 	public boolean VerificarAccionDuo(){
 		Scanner s = new Scanner(System.in);
-<<<<<<< HEAD
-		String str = s.nextLine();	
-		str.toUpperCase();		
-		String clave="AIKWS";
-=======
 		String str = s.nextLine();		
 		String clave="";
 		int nivel = mapa_actual.getNivel();
+		
 		switch (nivel){
 			case 0:
 				clave = "WSIKDDLL";
@@ -276,7 +272,7 @@ public class juego {
 				clave ="LDOEQUOE";				
 				break;
 		}
->>>>>>> origin/master
+
 		return (str.equals(clave));
 	}
 	
@@ -307,14 +303,14 @@ public class juego {
 			
 			if(tipoCeldaC==1 && tipoCeldaH==1){ //tipo 1 : 'D'
 				while(true){
-					game.Rend.mostrarAccionDuo();
+					game.Rend.mostrarAccionDuo(game.mapa_actual.getNivel(), cristobal.getPosX(), hermana.getPosX());
 					if(game.VerificarAccionDuo()){
 						game.AccionDuo(game.mapa_actual);
 						break;
 					}
 				}
 			}
-<<<<<<< HEAD
+
 					
 							 
 			if(game.mapa_actual.isEnemigo()==true && tipoCeldaC==2){
@@ -327,19 +323,15 @@ public class juego {
 			str= s.nextLine();
 			if(str.length()==1 ){
 				game.enviar_comando(str.charAt(0));
-=======
+
 			
 			//Si llega al final del nivel
 			if((posCX==(game.mapa_actual.getNumCol()-1)) && (posHX==posCX)){							
 				game.mapa_actual.setNivel(game.mapa_actual.getNivel()+1);
 				game.gestor.CargarMapa(game.mapa_actual, cristobal,hermana);//carga el mapa siguiente
 				game.Rend.mostrarMapa(game.mapa_actual, cristobal, hermana);
-			}
-				
-			String str = s.nextLine();
-			if(str.length()==1 ){						
-				game.enviar_comando(str.charAt(0));				
->>>>>>> origin/master
+			}		
+
 			}
 		}
 	}

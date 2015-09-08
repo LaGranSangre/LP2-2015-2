@@ -38,12 +38,12 @@ public class InterpreteComandos {
 					//mapa.MoverCristobal(y+1,x , cristobal);
 				}
 			}
-			System.out.print("X: ");
+			/*System.out.print("X: ");
 			System.out.print(x);
 			System.out.print("Y: ");
 			System.out.print(y);
 			System.out.print("\n");
-			System.out.println("mover arriba");
+			System.out.println("mover arriba");*/
 			break;
 		case 's': //Mover abajo
 			//y++;
@@ -55,12 +55,12 @@ public class InterpreteComandos {
 					//mapa.MoverCristobal(y-1,x, cristobal);
 				}
 			}
-			System.out.print("X: ");
+			/*System.out.print("X: ");
 			System.out.print(x);
 			System.out.print("Y: ");
 			System.out.print(y);
 			System.out.print("\n");
-			System.out.println("mover abajo");
+			System.out.println("mover abajo");*/
 			break;
 		case 'd': //Mover derecha
 			//x++;
@@ -72,12 +72,12 @@ public class InterpreteComandos {
 					//mapa.MoverCristobal(y,x-1, cristobal);
 				}					
 			}
-			System.out.print("X: ");
+			/*System.out.print("X: ");
 			System.out.print(x);
 			System.out.print("Y: ");
 			System.out.print(y);
 			System.out.print("\n");
-			System.out.println("mover derecha");
+			System.out.println("mover derecha");*/
 			break;
 		case 'a'://Mover izquierda			
 			//x--;
@@ -89,12 +89,12 @@ public class InterpreteComandos {
 					//mapa.MoverCristobal(y,x+1,  cristobal);
 				}
 			}			
-			System.out.print("X: ");
+			/*System.out.print("X: ");
 			System.out.print(x);
 			System.out.print("Y: ");
 			System.out.print(y);
 			System.out.print("\n");
-			System.out.println("mover izquierda\n");
+			System.out.println("mover izquierda\n");*/
 			break;
 		
 			//MOVER HERMANA
@@ -113,12 +113,12 @@ public class InterpreteComandos {
 							}
 						}
 						revisarTrigger(mapa, xH, yH);
-						System.out.print("X: ");
+						/*System.out.print("X: ");
 						System.out.print(xH);
 						System.out.print("Y: ");
 						System.out.print(yH);
 						System.out.print("\n");
-						System.out.println("mover arriba");
+						System.out.println("mover arriba");*/
 						break;
 					case 'k': //Mover abajo
 						//y++;
@@ -135,12 +135,12 @@ public class InterpreteComandos {
 							}
 						}
 						revisarTrigger(mapa, xH, yH);
-						System.out.print("X: ");
+						/*System.out.print("X: ");
 						System.out.print(xH);
 						System.out.print("Y: ");
 						System.out.print(yH);
 						System.out.print("\n");
-						System.out.println("mover abajo");
+						System.out.println("mover abajo");*/
 						break;
 					case 'l': //Mover derecha
 						//x++;
@@ -157,12 +157,12 @@ public class InterpreteComandos {
 							}					
 						}
 						revisarTrigger(mapa, xH, yH);
-						System.out.print("X: ");
+						/*System.out.print("X: ");
 						System.out.print(xH);
 						System.out.print("Y: ");
 						System.out.print(yH);
 						System.out.print("\n");
-						System.out.println("mover derecha");
+						System.out.println("mover derecha");*/
 						break;
 					case 'j'://Mover izquierda			
 						//x--;
@@ -179,12 +179,12 @@ public class InterpreteComandos {
 							}
 						}
 						revisarTrigger(mapa, xH, yH);
-						System.out.print("X: ");
+						/*System.out.print("X: ");
 						System.out.print(xH);
 						System.out.print("Y: ");
 						System.out.print(yH);
 						System.out.print("\n");
-						System.out.println("mover izquierda\n");
+						System.out.println("mover izquierda\n");*/
 						break;
 		}
 	}
