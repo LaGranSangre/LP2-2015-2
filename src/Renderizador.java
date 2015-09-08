@@ -18,7 +18,7 @@ public class Renderizador {
 				else if((j==xH && i==yH))
 					System.out.print("B ");
 				else
-					System.out.print(this.impresionCelda(mapaAMostrar[j][i]));
+					System.out.print(impresionCelda(m.getMapa()[i][j])+" ");
 			}
 			System.out.println();
 		}

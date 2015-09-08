@@ -79,6 +79,8 @@ class PersonajePrincipal extends Personaje{
 		super.Imprimir();
 	}
 	
+	
+	
 }
 
 class Enemigo extends Personaje{
