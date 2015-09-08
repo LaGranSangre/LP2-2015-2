@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Renderizador {
 	private Celda[][] mapaAMostrar;
+	
 	public void mostrarMapa(Mapa m,Personaje p1,Personaje p2){
 		int xC=p1.getPosX(),yC=p1.getPosY();
 		int xH=p2.getPosX(),yH=p2.getPosY();
@@ -58,8 +59,11 @@ public class Renderizador {
 	}
 	
 	public void generarMapaAMostrar(Mapa m){
-		for(int i=0;i<m.getNumFil();i++){
-			for(int j=0;j<m.getNumCol();j++){
+		int numFil=m.getNumFil();
+		int numCol=m.getNumCol();
+		mapaAMostrar=new Celda[numFil][numCol];
+		for(int i=0;i<numFil;i++){
+			for(int j=0;j<numCol;j++){
 				mapaAMostrar[i][j]=m.getMapa()[i][j];
 			}
 		}
