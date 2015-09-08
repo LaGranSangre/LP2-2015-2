@@ -21,11 +21,15 @@ public class juego {
 	}
 	
 	public int PantallaInicio(){
+		Rend.mostrarHistoria1();
 		return Rend.PantallaInicio();
 	}
 	
 	public void AccionDuo(Mapa mapaActual){
 		int tipoMapa = mapaActual.getNivel();
+		Scanner s = new Scanner(System.in);	
+		String str;
+				
 		switch (tipoMapa){
 		case 0:
 			cristobal.setPosX(cristobal.getPosX()-1); 
@@ -34,41 +38,135 @@ public class juego {
 			hermana.setPosY(hermana.getPosY()+1);	
 			
 			Rend.mostrarMapa(mapa_actual, cristobal, hermana);//se muestra el mapa luego de cada cambio
-						
+			str = s.nextLine();
+			
 			//cristobal.setPosX(cristobal.getPosX()-1); 
 			cristobal.setPosY(cristobal.getPosY()-1);		
 			//hermana.setPosX(hermana.getPosX()-1); 
 			hermana.setPosY(hermana.getPosY()+1);	
 			
 			Rend.mostrarMapa(mapa_actual, cristobal, hermana);//se muestra el mapa luego de cada cambio
-						
+			str = s.nextLine();		
+			
 			cristobal.setPosX(cristobal.getPosX()+1); 
 			//cristobal.setPosY(cristobal.getPosY()-1);		
 			hermana.setPosX(hermana.getPosX()+1); 
 			//hermana.setPosY(hermana.getPosY()+1);	
 			
 			Rend.mostrarMapa(mapa_actual, cristobal, hermana);//se muestra el mapa luego de cada cambio
-						
+			str = s.nextLine();
+			
 			cristobal.setPosX(cristobal.getPosX()+3); 
 			//cristobal.setPosY(cristobal.getPosY()-1);		
 			hermana.setPosX(hermana.getPosX()+3); 
 			//hermana.setPosY(hermana.getPosY()+1);	
 			
 			Rend.mostrarMapa(mapa_actual, cristobal, hermana);//se muestra el mapa luego de cada cambio
-						
+			str = s.nextLine();
+			
 			cristobal.setPosX(cristobal.getPosX()+1); 
 			//cristobal.setPosY(cristobal.getPosY()-1);		
 			hermana.setPosX(hermana.getPosX()+1); 
 			//hermana.setPosY(hermana.getPosY()+1);	
 			
 			Rend.mostrarMapa(mapa_actual, cristobal, hermana);//se muestra el mapa luego de cada cambio
-						
+			str = s.nextLine();
+			
 			cristobal.setPosX(cristobal.getPosX()-1); 
 			cristobal.setPosY(cristobal.getPosY()+2);		
 			hermana.setPosX(hermana.getPosX()-1); 
 			hermana.setPosY(hermana.getPosY()-2);	
-						
-			Rend.mostrarMapa(mapa_actual, cristobal, hermana);
+			
+			Rend.mostrarMapa(mapa_actual, cristobal, hermana);//se muestra el mapa luego de cada cambio
+			str = s.nextLine();
+			
+			break;
+		
+		case 1:
+			if(cristobal.getPosY()==5 && hermana.getPosY()==5){
+				cristobal.setPosX(cristobal.getPosX()-1); 
+				cristobal.setPosY(cristobal.getPosY()-1);		
+				hermana.setPosX(hermana.getPosX()-1); 
+				hermana.setPosY(hermana.getPosY()+1);	
+				
+				Rend.mostrarMapa(mapa_actual, cristobal, hermana);//se muestra el mapa luego de cada cambio
+				str = s.nextLine();
+									
+				cristobal.setPosX(cristobal.getPosX()+1); 
+				//cristobal.setPosY(cristobal.getPosY()-1);		
+				hermana.setPosX(hermana.getPosX()+1); 
+				//hermana.setPosY(hermana.getPosY()+1);	
+				
+				Rend.mostrarMapa(mapa_actual, cristobal, hermana);//se muestra el mapa luego de cada cambio
+				str = s.nextLine();
+				
+				cristobal.setPosX(cristobal.getPosX()+2); 
+				//cristobal.setPosY(cristobal.getPosY()-1);		
+				hermana.setPosX(hermana.getPosX()+2); 
+				//hermana.setPosY(hermana.getPosY()+1);	
+				
+				Rend.mostrarMapa(mapa_actual, cristobal, hermana);//se muestra el mapa luego de cada cambio
+				str = s.nextLine();
+				
+				cristobal.setPosX(cristobal.getPosX()+1); 
+				//cristobal.setPosY(cristobal.getPosY()-1);		
+				hermana.setPosX(hermana.getPosX()+1); 
+				//hermana.setPosY(hermana.getPosY()+1);	
+				
+				Rend.mostrarMapa(mapa_actual, cristobal, hermana);//se muestra el mapa luego de cada cambio
+				str = s.nextLine();
+				
+				cristobal.setPosX(cristobal.getPosX()-1); 
+				cristobal.setPosY(cristobal.getPosY()+2);		
+				hermana.setPosX(hermana.getPosX()-1); 
+				hermana.setPosY(hermana.getPosY()-2);	
+				
+				Rend.mostrarMapa(mapa_actual, cristobal, hermana);//se muestra el mapa luego de cada cambio
+				str = s.nextLine();
+			}
+			else{
+				//cristobal.setPosX(cristobal.getPosX()-1); 
+				cristobal.setPosY(cristobal.getPosY()-1);		
+				//hermana.setPosX(hermana.getPosX()-1); 
+				hermana.setPosY(hermana.getPosY()+1);	
+				
+				Rend.mostrarMapa(mapa_actual, cristobal, hermana);//se muestra el mapa luego de cada cambio
+				str = s.nextLine();
+									
+				cristobal.setPosX(cristobal.getPosX()+1); 
+				//cristobal.setPosY(cristobal.getPosY()-1);		
+				hermana.setPosX(hermana.getPosX()+1); 
+				//hermana.setPosY(hermana.getPosY()+1);	
+				
+				Rend.mostrarMapa(mapa_actual, cristobal, hermana);//se muestra el mapa luego de cada cambio
+				str = s.nextLine();
+				
+				cristobal.setPosX(cristobal.getPosX()-1); 
+				cristobal.setPosY(cristobal.getPosY()-2);		
+				hermana.setPosX(hermana.getPosX()-1); 
+				hermana.setPosY(hermana.getPosY()-2);	
+				
+				Rend.mostrarMapa(mapa_actual, cristobal, hermana);//se muestra el mapa luego de cada cambio
+				str = s.nextLine();
+				
+				cristobal.setPosX(cristobal.getPosX()+1); 
+				//cristobal.setPosY(cristobal.getPosY()-1);		
+				hermana.setPosX(hermana.getPosX()+1); 
+				//hermana.setPosY(hermana.getPosY()+1);	
+				
+				Rend.mostrarMapa(mapa_actual, cristobal, hermana);//se muestra el mapa luego de cada cambio
+				str = s.nextLine();
+				
+				cristobal.setPosX(cristobal.getPosX()-1); 
+				cristobal.setPosY(cristobal.getPosY()+2);		
+				hermana.setPosX(hermana.getPosX()-1); 
+				hermana.setPosY(hermana.getPosY()-2);	
+				
+				Rend.mostrarMapa(mapa_actual, cristobal, hermana);//se muestra el mapa luego de cada cambio
+				str = s.nextLine();
+			}
+			break;
+			
 		}
 	}
 	

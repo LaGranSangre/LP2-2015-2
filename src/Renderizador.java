@@ -39,7 +39,7 @@ public class Renderizador {
 	
 	private final static void limpiarPantalla()
 	{
-	    try
+	    /*try
 	    {
 	        final String os = System.getProperty("os.name");
 
@@ -55,7 +55,9 @@ public class Renderizador {
 	    catch (final Exception e)
 	    {
 	        //  Handle any exceptions.
-	    }
+	    }*/
+		for(int i=0;i<25;i++)
+			System.out.println("");
 	}
 	
 	public void generarMapaAMostrar(Mapa m){
@@ -118,6 +120,29 @@ public class Renderizador {
 
 	public void mostrarAccionDuo(){
 		System.out.println("Persione las teclas: AIKWS");
+	}
+	
+	public void mostrarHistoria1(){
+		limpiarPantalla();
+		System.out.println("          Cristóbal y su hermana son pequeños.");
+		System.out.println("         Hermana de Cristobal: ¿Para qué servimos?");
+		System.out.println("               Cristobal: Seremos valiosos");
+		System.out.println("        Hermana de Cristobal: ¿Que te parece si...");
+		for(int j=0;j<9;j++)
+			for(int i=0;i<1000000000;i++);;
+		System.out.println("           ... preguntamos a la llama sabia");
+	}
+
+	public void mostrarHistoria2(){
+		limpiarPantalla();
+	}
+	
+	public void mostrarHistoria3(){
+		limpiarPantalla();
+	}
+	
+	public void mostrarHistoria4(){
+		limpiarPantalla();
 	}
 	
 }
