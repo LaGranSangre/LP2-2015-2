@@ -20,9 +20,22 @@ public class juego {
 		//de texto		
 	}
 	
+	
+	
 	public int PantallaInicio(){
 		Rend.mostrarHistoria1();
 		return Rend.PantallaInicio();
+	}
+	
+	public int MatarEnemigo(String str){
+		str.toUpperCase();
+			
+		if(str.compareTo("WDEWW")==0){
+			mapa_actual.setEnemigo(false);
+			gestor.remover_enemigo((mapa_actual));
+			return 1;
+		}
+		return 0;
 	}
 	
 	public void AccionDuo(Mapa mapaActual){
@@ -177,7 +190,8 @@ public class juego {
 
 	public boolean VerificarAccionDuo(){
 		Scanner s = new Scanner(System.in);
-		String str = s.nextLine();
+		String str = s.nextLine();	
+		str.toUpperCase();		
 		String clave="AIKWS";
 		return (str.equals(clave));
 	}
@@ -201,6 +215,7 @@ public class juego {
 
 		
 		Scanner s = new Scanner(System.in);		
+		String str;
 		while(true){
 			int posCX = cristobal.getPosX(), posCY = cristobal.getPosY(), posHX = hermana.getPosX(), posHY = hermana.getPosY();
 			System.out.print(posCX + posCY + posHX + posHY);
@@ -218,12 +233,18 @@ public class juego {
 					}
 				}
 			}
-			
-			
-				
-			String str = s.nextLine();
-			if(str.length()==1 ){						
-				game.enviar_comando(str.charAt(0));				
+					
+							 
+			if(game.mapa_actual.isEnemigo()==true && tipoCeldaC==2){
+				while(true){
+					game.Rend.mostrarAccionCristobal();
+					str=s.nextLine();
+					if(game.MatarEnemigo(str)==1)break;
+				}				
+			}
+			str= s.nextLine();
+			if(str.length()==1 ){
+				game.enviar_comando(str.charAt(0));
 			}
 		}
 	}

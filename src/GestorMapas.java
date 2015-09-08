@@ -70,4 +70,11 @@ public class GestorMapas {
 	        }
 	   }
 	}
+	
+	public void remover_enemigo(Mapa map){		
+		for(int i=0;i<map.getNumFil();++i)
+			for(int j=0;j<map.getNumCol();++j)
+				if(map.getMapa()[i][j].getCelda()=='E')
+					map.getMapa()[i][j].setCelda('N');							
+	}
 }

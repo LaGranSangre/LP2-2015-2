@@ -50,7 +50,10 @@ public class Celda {
 		case 'H': //Hueco o surco grande.(H)
 			tipo = 10;
 			break;
-		}
+		case 'T':
+			tipo=1;
+			break;
+		}		
 	}
 	
 }

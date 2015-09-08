@@ -21,7 +21,7 @@ public class Renderizador {
 					System.out.print(impresionCelda(m.getMapa()[i][j])+" ");
 			}
 			System.out.println();
-		}
+		}		
 		/*System.out.println();
 		System.out.println("============================");
 		System.out.println("MATRIZ DE TIPOS");
@@ -120,6 +120,10 @@ public class Renderizador {
 
 	public void mostrarAccionDuo(){
 		System.out.println("Persione las teclas: AIKWS");
+	}
+	
+	public void mostrarAccionCristobal(){
+		System.out.println("Persione las teclas: WDEWW");
 	}
 	
 	public void mostrarHistoria1(){

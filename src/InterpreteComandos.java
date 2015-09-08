@@ -5,10 +5,12 @@ public class InterpreteComandos {
 	public InterpreteComandos(){	
 	}
 	
-	public void revisarTrigger(Mapa mapa,int x,int y){		
-		if(mapa.getMapa()[x][y].getCelda()=='T'){
-			for(int i=0;i<mapa.getNumCol();++i) if(mapa.getMapa()[x][i].getCelda()=='T')mapa.getMapa()[x][i].setCelda('N');
-			mapa.getMapa()[x+1][y].setCelda('E');		
+	public void revisarTrigger(Mapa mapa,int x,int y){	
+		//Celda temp=mapa.getMapa()[x][y];
+		if(mapa.getMapa()[y][x].getCelda()=='T'){
+			for(int i=0;i<mapa.getNumFil();++i) 
+				if(mapa.getMapa()[i][x].getCelda()=='T')
+					mapa.getMapa()[i][x].setCelda('N');				
 			mapa.setEnemigo(true);
 		}
 	}
