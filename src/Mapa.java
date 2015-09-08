@@ -88,7 +88,14 @@ public class Mapa {
 	*/
 	
 	
-	
+	public void EliminaRata(Mapa mapa_actual){
+		int i, j;
+		for(i=0;i<numFil;i++){
+			for(j=0;j<numCol;j++)
+				if(mapa_actual.isEnemigo())
+					mapa_actual.mapa[i][j].setCelda('0');			
+		}
+	}
 	
 	
 	public void MostrarMapa(int xC, int yC, int xH, int yH){

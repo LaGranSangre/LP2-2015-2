@@ -96,7 +96,7 @@ public class juego {
 			break;
 		
 		case 1:
-			if(cristobal.getPosY()==5 && hermana.getPosY()==5){
+			if(cristobal.getPosX()==5 && hermana.getPosX()==5){
 				cristobal.setPosX(cristobal.getPosX()-1); 
 				cristobal.setPosY(cristobal.getPosY()-1);		
 				hermana.setPosX(hermana.getPosX()-1); 
@@ -170,16 +170,80 @@ public class juego {
 				Rend.mostrarMapa(mapa_actual, cristobal, hermana);//se muestra el mapa luego de cada cambio
 				str = s.nextLine();
 				
-				cristobal.setPosX(cristobal.getPosX()-1); 
-				cristobal.setPosY(cristobal.getPosY()+2);		
-				hermana.setPosX(hermana.getPosX()-1); 
-				hermana.setPosY(hermana.getPosY()-2);	
+				 
+				cristobal.setPosY(cristobal.getPosY()-1);						
+				hermana.setPosY(hermana.getPosY()-1);	
+				
+				Rend.mostrarMapa(mapa_actual, cristobal, hermana);//se muestra el mapa luego de cada cambio
+				str = s.nextLine();
+				
+				cristobal.setPosY(cristobal.getPosY()-1);						
+				hermana.setPosY(hermana.getPosY()-1);	
+				
+				Rend.mostrarMapa(mapa_actual, cristobal, hermana);//se muestra el mapa luego de cada cambio
+				str = s.nextLine();
+				
+				cristobal.setPosY(cristobal.getPosY()-3);
+				cristobal.setPosX(cristobal.getPosX()+1);
+				hermana.setPosY(hermana.getPosY()-3);
+				hermana.setPosX(hermana.getPosX()+1);	
+				
+				Rend.mostrarMapa(mapa_actual, cristobal, hermana);//se muestra el mapa luego de cada cambio
+				str = s.nextLine();
+				
+				
+				cristobal.setPosX(cristobal.getPosX()+1);				
+				hermana.setPosX(hermana.getPosX()+1);	
+				
+				Rend.mostrarMapa(mapa_actual, cristobal, hermana);//se muestra el mapa luego de cada cambio
+				str = s.nextLine();
+				
+				cristobal.setPosY(cristobal.getPosY()+2);
+				cristobal.setPosX(cristobal.getPosX()-1);
+				hermana.setPosY(hermana.getPosY()-2);
+				hermana.setPosX(hermana.getPosX()-1);	
 				
 				Rend.mostrarMapa(mapa_actual, cristobal, hermana);//se muestra el mapa luego de cada cambio
 				str = s.nextLine();
 			}
 			break;
 			
+		case 2:
+			//cristobal.setPosX(cristobal.getPosX()-1); 
+			cristobal.setPosY(cristobal.getPosY()-1);		
+			//hermana.setPosX(hermana.getPosX()-1); 
+			hermana.setPosY(hermana.getPosY()+1);	
+			
+			Rend.mostrarMapa(mapa_actual, cristobal, hermana);//se muestra el mapa luego de cada cambio
+			str = s.nextLine();
+			
+			cristobal.setPosX(cristobal.getPosX()+1); 
+			//cristobal.setPosY(cristobal.getPosY()-1);		
+			hermana.setPosX(hermana.getPosX()+1); 
+			//hermana.setPosY(hermana.getPosY()+1);	
+			
+			Rend.mostrarMapa(mapa_actual, cristobal, hermana);//se muestra el mapa luego de cada cambio
+			str = s.nextLine();		
+			
+			cristobal.setPosX(cristobal.getPosX()+3); 
+			//cristobal.setPosY(cristobal.getPosY()-1);		
+			hermana.setPosX(hermana.getPosX()+3); 
+			//hermana.setPosY(hermana.getPosY()+1);	
+			
+			Rend.mostrarMapa(mapa_actual, cristobal, hermana);//se muestra el mapa luego de cada cambio
+			str = s.nextLine();
+			
+			mapa_actual.EliminaRata(mapa_actual);
+			
+			//cristobal.setPosX(cristobal.getPosX()+3); 
+			cristobal.setPosY(cristobal.getPosY()-1);		
+			//hermana.setPosX(hermana.getPosX()+3); 
+			hermana.setPosY(hermana.getPosY()-1);	
+			
+			Rend.mostrarMapa(mapa_actual, cristobal, hermana);//se muestra el mapa luego de cada cambio
+			str = s.nextLine();
+			
+		
 		}
 	}
 	
@@ -197,9 +261,7 @@ public class juego {
 	}
 	
 	public static void main(String args[]) {
-		//Holaaa ptmr ya carga mapas!!!!!
-		//Holaaa ptmr ya carga mapas!!!!!
-		//Holaaa ptmr ya carga mapas!!!!!
+		
 		juego game=new juego();
 		/*Mapa m = new Mapa();		
 		GestorMapas gm = new GestorMapas();
@@ -218,7 +280,6 @@ public class juego {
 		String str;
 		while(true){
 			int posCX = cristobal.getPosX(), posCY = cristobal.getPosY(), posHX = hermana.getPosX(), posHY = hermana.getPosY();
-			System.out.print(posCX + posCY + posHX + posHY);
 			
 			game.Rend.mostrarMapa(game.mapa_actual,cristobal,hermana);
 			
@@ -233,6 +294,7 @@ public class juego {
 					}
 				}
 			}
+<<<<<<< HEAD
 					
 							 
 			if(game.mapa_actual.isEnemigo()==true && tipoCeldaC==2){
@@ -245,6 +307,19 @@ public class juego {
 			str= s.nextLine();
 			if(str.length()==1 ){
 				game.enviar_comando(str.charAt(0));
+=======
+			
+			//Si llega al final del nivel
+			if((posCX==(game.mapa_actual.getNumCol()-1)) && (posHX==posCX)){							
+				game.mapa_actual.setNivel(game.mapa_actual.getNivel()+1);
+				game.gestor.CargarMapa(game.mapa_actual, cristobal,hermana);//carga el mapa siguiente
+				game.Rend.mostrarMapa(game.mapa_actual, cristobal, hermana);
+			}
+				
+			String str = s.nextLine();
+			if(str.length()==1 ){						
+				game.enviar_comando(str.charAt(0));				
+>>>>>>> origin/master
 			}
 		}
 	}
